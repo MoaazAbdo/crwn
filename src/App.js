@@ -35,6 +35,7 @@ class App extends React.Component {
       
       //createUserProfileDocument(user);
       if (userAuth) {
+
         const userRef = await createUserProfileDocument(userAuth);
         
         userRef.onSnapshot(snapShot => {
@@ -45,6 +46,8 @@ class App extends React.Component {
               ...snapShot.data()
             }
           });
+
+          console.log(this.state.currentUser.displayName);
           
         });
       
@@ -62,6 +65,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+
+       
         <Header currentUser={this.state.currentUser} />
               
         <Switch>

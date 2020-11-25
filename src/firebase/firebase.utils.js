@@ -26,6 +26,7 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
     const userRef = firestore.doc(`users/${userAuth.uid}`);
     const snapShopt = await userRef.get();
     
+
     if (!snapShopt.exists) {
         const { displayName, email } = userAuth; 
         const createdAt = new Date();
@@ -43,8 +44,6 @@ export const createUserProfileDocument = async(userAuth, additionalData) => {
     }
     
     return userRef;
-   
-    
 }
 
 firebase.initializeApp(config);
