@@ -47,13 +47,16 @@ class App extends React.Component {
             }
           });
 
-          console.log(this.state.currentUser.displayName);
+          console.log(this.state)
           
         });
+
+       
       
       } else {
         this.setState({currentUser: userAuth});
       }
+      
 
     });
   }
@@ -66,7 +69,7 @@ class App extends React.Component {
     return (
       <div>
 
-       
+
         <Header currentUser={this.state.currentUser} />
               
         <Switch>
